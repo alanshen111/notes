@@ -3,6 +3,7 @@
 ### The Main() Function
 
 ```C
+#include <stdio.h>
 int main(int argc, char **argv) {
   // do stuff
   return 0;
@@ -34,6 +35,7 @@ Note that the last element is always a null pointer (`argv[argc] == null`).
 This is also perfectly valid, if you don't care about arguments.
 
 ```C
+#include <stdio.h>
 int main(void) {
   // do stuff
   return 0;
