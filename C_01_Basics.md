@@ -1,6 +1,17 @@
 # C_01_Basics
 
-### The Main() Function
+### Compilation
+
+You can't just run a `.c` file, you need to compile it and make an executable. This is commonly done with `gcc`.
+
+```Shell
+gcc file.c -o executable
+```
+To run, simply use:
+```Shell
+./executable
+```
+### The `main()` Function
 
 ```C
 int main(int argc, char **argv) {
@@ -11,8 +22,8 @@ int main(int argc, char **argv) {
 
 #### Arguments
 
-- `argc`: **arg**ument **c**ount
-- `argv`: **arg**ument **v**ector
+- `argc`: argument count
+- `argv`: argument vector
 
 So, if you ran your program like this:
 
@@ -26,12 +37,13 @@ So, if you ran your program like this:
 Note that the last element is always a null pointer (`argv[argc] == null`).
 
 #### Returning
-- returning 0 indicates success, error otherwise
-- main() must return int
+- `main()` must return int
+- returning 0 indicates success, any other integer should be considered an error flag
+
 
 #### Simpler
 
-This is also perfectly valid, if you don't care about arguments.
+This argument-less `main()` function is also perfectly valid, if you don't care about arguments.
 
 ```C
 int main(void) {
@@ -39,4 +51,4 @@ int main(void) {
   return 0;
 }
 ```
-Note that there can only be one main function in a program.
+Note that there can only be one `main()` function in a program.
