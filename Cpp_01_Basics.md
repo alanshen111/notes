@@ -1,11 +1,13 @@
-# C_01_Basics
+# Cpp_01_Basics
+
+> Note that all notes on C are applicable to C++, as C++ is largely as superclass of C. Then why do you need to know C? Legacy code, and your job description says so.
 
 ### Compilation
 
-You can't just run a `.c` file, you need to compile it and make an executable. This is commonly done with `gcc`.
+You can't just run a `.cpp` file, you need to compile it and make an executable. This is commonly done with `g++`.
 
 ```Shell
-gcc file.c -o executable
+g++ -o executable hello.cpp
 ```
 To run, simply use:
 ```Shell
@@ -23,7 +25,7 @@ int main(int argc, char **argv) {
 #### Arguments
 
 - `argc`: argument count
-- `argv`: argument vector
+- `argv`: argument vector, with `**argv` being a pointer to the first element of the array. An equvialent and more explicit representation can be `*argv[]`.
 
 So, if you ran your program like this:
 
