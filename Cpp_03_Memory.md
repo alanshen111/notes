@@ -57,3 +57,9 @@ str2 = str1; // Bad! Now the 40 bytes are impossible to free.
 delete [] str2; // This deletes the 30 bytes.
 delete [] str1; // Possible access violation.
 ```
+And even re-assignments.
+``` cpp
+int* arr = (int *) malloc( sizeof(int)*10 );
+// free(arr);
+arr = (int *) malloc( sizeof(int)*100 ); // original 10 ints lost forever. 
+```

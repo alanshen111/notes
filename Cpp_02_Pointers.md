@@ -1,5 +1,5 @@
 # Cpp_02_Pointers
-## Confusing Syntax
+## Syntax Stuff
 ```c
 int* p = &i;
 int& r = i;
@@ -21,7 +21,7 @@ A reference is just a pointer that can not change.
 a = 4;
 &b = a;
 ```
-`b` is a reference to`a`. If `b` changes, so does `a`, and vice versa.
+`b` is a reference to `a`. If `b` changes, so does `a`, and vice versa.
 ```cpp
 a = 4;
 *b = a;
@@ -41,4 +41,19 @@ int foo(int& x){
    x++;
 }
 ```
-This will increment the passed argument. As mentioned earlier, changes to references will change the refered value. Similarly, changing dereferenced pointers will also change their pointed value.
+This will increment the passed argument. As mentioned earlier, changes to references will change the referred value. Similarly, changing dereferenced pointers will also change their pointed value.
+
+## Arrays
+
+Arrays are pointers.
+
+``` cpp
+data = (int*) malloc(sizeof(int)*20);
+data[2] = 100; // set 3rd element in alloc'd array to 100
+*(data+2) = 100; // same thing
+```
+
+- `data[0]` is equivalent to `*data`
+- `&data[0]` is equivalent to `data`
+- `data[2]` is equivalent to `*(data + 2)`
+- `&data[2]` is equivalent to `data + 2` (Typed pointers move ahead by the size of their type when added to them.)
