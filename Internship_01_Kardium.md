@@ -5,8 +5,8 @@
 - `Map`s can be ordered, it's called a `LinkedHashMap`
 - UTF-8 CSV files sometimes come with a byte order marker (BOM), which can make parsing difficult without a library
 - `git squash` is a thing
-- regularly `git submodule update`
-- `git push origin "branch name" --force-with-lease` can help sometimes
+- `git submodule update` and `rebase` and `fetch` can solve many problems
+  - `git push origin "branch name" --force-with-lease` can help sometimes too
 - lambdas can be used to implement single method interfaces like `Consumer`s
 
 ##### Listeners
