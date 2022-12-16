@@ -1,6 +1,6 @@
 # Cpp_01_Basics
 
-> Note that all notes on C are applicable to C++, as C++ is largely as superclass of C. Then why do you need to know C? Legacy code, and your job description says so.
+> Note that all information about C is applicable to C++, as C++ is a superclass of C. Then why do you need to know C? Legacy code, and your job description says so.
 
 ## Compilation
 

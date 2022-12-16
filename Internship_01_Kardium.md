@@ -7,7 +7,12 @@
 - `git squash` is a thing
 - `git submodule update` and `rebase` and `fetch` can solve many problems
   - `git push origin "branch name" --force-with-lease` can help sometimes too
-- lambdas can be used to implement single method interfaces like `Consumer`s
+- "`no upstream`/`detached head`" means the branch can't do much because it doesn't exist on remote yet. You need an initial `push`.
+- lambdas can be used to implement single method (functional) interfaces like `Consumer`s
+- use brackets to cast properly
+  - `(a) b.c.d` casts `a` onto `d`
+  - `((a) b).c.d` casts `a` onto `b`
+- be very careful on `merge`s - one screw up can fail the whole build, or even worse: **NOT** fail the build
 
 ##### Listeners
 `Listener`s are great ways to perform an action when something changes. Here is an example of a how to use a listener:
@@ -63,7 +68,7 @@ public class ExampleClass<T> {
 
     public ExampleClass() {
     // ...
-    Consumer consumer = new Consumer() {
+    Consumer<Object> consumer = new Consumer() {
             @Override
             public void accept(Object o) {
                 //...
@@ -80,3 +85,21 @@ public class ExampleClass<T> {
 
 }
 ```
+
+Here is an example of a `Consumer` lambda.
+``` Java
+Consumer<String> c = (x) -> System.out.println(x.toLowerCase());
+c.accept("Qiuqiu")
+```
+
+##### Wildcards
+`<?>` is a shorthand for` <? extends Object>`, it's also known as an unbounded wildcard. So `List<?>` is a list of anything you want.
+
+Note that the use case is different from `List<Object>`.
+``` Java
+public void print(List<Object> list); // takes EXACTLY a List<Object> (no subclasses)
+```
+``` Java
+public void print(List<?> list); // takes a List<Object> or its subclasses
+```
+Theres a lot more to generics... may want to study this more thoroughly...
