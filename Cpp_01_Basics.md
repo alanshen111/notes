@@ -21,7 +21,11 @@ int main(int argc, char **argv) {
   return 0;
 }
 ```
-
+For `.c` files, use `gcc`.
+```Shell
+g++ hello.cpp -o executable
+```
+Note that the argument orders are different.
 ##### Arguments
 
 - `argc`: argument count
